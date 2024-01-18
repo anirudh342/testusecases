@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Diplay message example
+    debug:
+      msg: "Hello World"
