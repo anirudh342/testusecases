@@ -16,10 +16,10 @@ jobs:
       - name: Trigger AWX Job
         env:
           AWX_API_URL: 'http://192.168.10.4/api/v2/'  # Replace with your AWX server URL
-          AWX_TEMPLATE_ID: '9'            # Replace with the ID of your AWX job template
+          AWX_TEMPLATE_ID: 9            # Replace with the ID of your AWX job template
           AWX_USERNAME: 'admin'              # Replace with your AWX username
           AWX_PASSWORD: 'Hello@2010'              # Replace with your AWX password
-          AWX_JOB_LIMIT: '5'                             # Replace with the number of jobs to trigger
+          AWX_JOB_LIMIT: 50                             # Replace with the number of jobs to trigger
         run: |
           curl -k -X POST -H "Content-Type: application/json" -u "$AWX_USERNAME:$AWX_PASSWORD" \
                "$AWX_API_URL/job_templates/$AWX_TEMPLATE_ID/launch/" \
